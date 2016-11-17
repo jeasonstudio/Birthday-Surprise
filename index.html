@@ -8,30 +8,6 @@
     <title>TheaterJS, a typing effect mimicking human behavior.</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cutive">
     <link rel="stylesheet" href="styles.css">
-
-    <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-43673873-8', 'auto');
-            ga('send', 'pageview');
-
-
-            function fullScreen() {
-            var el = document.documentElement;
-            var rfs = el.requestFullScreen || el.webkitRequestFullScreen || 
-                el.mozRequestFullScreen || el.msRequestFullScreen;
-            if(typeof rfs != "undefined" && rfs) {
-                rfs.call(el);
-            } else if(typeof window.ActiveXObject != "undefined") {
-                //for IE，这里其实就是模拟了按下键盘的F11，使浏览器全屏
-                var wscript = new ActiveXObject("WScript.Shell");
-                if(wscript != null) {
-                    wscript.SendKeys("{F11}");
-                }
-            }
-            }
-
-            fullScreen();
-        </script>
 </head>
 
 <body>
@@ -55,47 +31,8 @@
     </main>
 
     <script src="theater.min.js"></script>
-    <script>
-            var theater = theaterJS()
+    <script src="app.js"></script>
 
-            theater
-                .on('type:start, erase:start', function () {
-                    theater.getCurrentActor().$element.classList.add('actor__content--typing')
-                })
-                .on('type:end, erase:end', function () {
-                    theater.getCurrentActor().$element.classList.remove('actor__content--typing')
-                })
-                .on('type:start, erase:start', function () {
-                    if (theater.getCurrentActor().name === 'vader') {
-                        document.body.classList.add('dark')
-                    } else {
-                        document.body.classList.remove('dark')
-                    }
-                })
-
-            theater
-                .addActor('vader', { speed: 0.8, accuracy: 0.6 })
-                .addActor('luke')
-                .addScene('vader:Luke', 400)
-                .addScene('luke:What?')
-                .addScene('vader:I am your father.')
-                .addScene('luke:Nooo...', -3, '!!! ', 400, 'No! ', 400)
-                .addScene('luke:That\'s not true!', 400)
-                .addScene('luke:That\'s impossible!')
-                .addScene('vader:Search your feelings.', 1600)
-                .addScene('vader:You know it to be true.', 1000)
-                .addScene('luke:Noooooooo! ', 400, 'No!')
-                .addScene('vader:Luke.', 800)
-                .addScene('vader:You can destroy the Emperor.', 1600)
-                .addScene('vader:He has foreseen this. ', 800)
-                .addScene('vader:It is your destiny.', 1600)
-                .addScene('vader:Join me.', 800)
-                .addScene('vader:Together we can rule the galaxy.', 800)
-                .addScene('vader:As father and son.', 1600)
-                .addScene('vader:Come with me. ', 800)
-                .addScene('vader:It is the only way.', 2000)
-                .addScene(theater.replay.bind(theater))
-        </script>
 </body>
 
 </html>
