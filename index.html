@@ -6,26 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HappyBrithday</title>
+    <link rel="stylesheet" href="js/flipclock.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="dark">
     <main class="scene">
         <div class="actor">
-            <div class="actor__prefix">-:&nbsp;</div>
+            <div class="actor__prefix">●&nbsp;&nbsp;&nbsp;</div>
             <div id="vader" class="actor__content"></div>
         </div>
-
         <div class="actor">
-            <div class="actor__prefix">-:&nbsp;</div>
+            <div class="actor__prefix">●&nbsp;&nbsp;&nbsp;</div>
             <div id="jeason" class="actor__content"></div>
         </div>
-
+        <div class="clock"></div>
+        <div class="message"></div>
+        <div class="myMessage"><h1>That is the Date We Have Been Together For ...</h1></div>
     </main>
 
-    <script src="theater.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/flipclock.min.js"></script>
+    <script src="js/theater.min.js"></script>
     <script src="app.js"></script>
 
+    <script>fullScreen();</script>
 </body>
 
 </html>

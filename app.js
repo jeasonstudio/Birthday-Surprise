@@ -1,4 +1,4 @@
-(function fullScreen() {
+function fullScreen() {
     var el = document.documentElement;
     var rfs = el.requestFullScreen || el.webkitRequestFullScreen ||
         el.mozRequestFullScreen || el.msRequestFullScreen;
@@ -10,7 +10,7 @@
             wscript.SendKeys("{F11}");
         }
     }
-})()
+}
 
 var theater = theaterJS()
 
@@ -43,3 +43,23 @@ theater
     .addScene('vader:不好意思耽误大家几分钟的时间', 1500)
     .addScene('jeason:今天是我女朋友贾凡茗的生日，她现在', 500, '就坐在讲台下', 1000)
     // .addScene(theater.replay.bind(theater))
+
+
+var nowDate = new Date();
+var theDateWeBegan = new Date('Mon Aug 15 2016 21:36:07 GMT+0800 (CST)');
+
+var secOfDate = (nowDate - theDateWeBegan) / 1000;
+
+console.log('距今相差秒数为：' + secOfDate);
+
+var clock;
+
+$(document).ready(function () {
+    var clock;
+
+    clock = $('.clock').FlipClock(secOfDate, {
+        clockFace: 'DailyCounter',
+        autoStart: true
+    });
+
+});
