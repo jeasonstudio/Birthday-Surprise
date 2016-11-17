@@ -21,36 +21,25 @@ theater
     .on('type:end, erase:end', function () {
         theater.getCurrentActor().$element.classList.remove('actor__content--typing')
     })
-    .on('type:start, erase:start', function () {
-        if (theater.getCurrentActor().name === 'vader') {
-            document.body.classList.add('dark')
-        } else {
-            document.body.classList.remove('dark')
-        }
-    })
+    // .on('type:start, erase:start', function () {
+    //     // if (theater.getCurrentActor().name === 'vader') {
+    //     document.body.classList.add('dark')
+    //         // } else {
+    //         //     document.body.classList.remove('dark')
+    //         // }
+    // })
 
 theater
     .addActor('vader', {
-        speed: 0.8,
-        accuracy: 0.6
+        speed: 1,
+        accuracy: 0.4
     })
-    .addActor('luke')
-    .addScene('vader:Luke', 400)
-    .addScene('luke:What?')
-    .addScene('vader:I am your father.')
-    .addScene('luke:Nooo...', -3, '!!! ', 400, 'No! ', 400)
-    .addScene('luke:That\'s not true!', 400)
-    .addScene('luke:That\'s impossible!')
-    .addScene('vader:Search your feelings.', 1600)
-    .addScene('vader:You know it to be true.', 1000)
-    .addScene('luke:Noooooooo! ', 400, 'No!')
-    .addScene('vader:Luke.', 800)
-    .addScene('vader:You can destroy the Emperor.', 1600)
-    .addScene('vader:He has foreseen this. ', 800)
-    .addScene('vader:It is your destiny.', 1600)
-    .addScene('vader:Join me.', 800)
-    .addScene('vader:Together we can rule the galaxy.', 800)
-    .addScene('vader:As father and son.', 1600)
-    .addScene('vader:Come with me. ', 800)
-    .addScene('vader:It is the only way.', 2000)
-    .addScene(theater.replay.bind(theater))
+    .addActor('jeason', {
+        speed: 1,
+        accuracy: 0.4
+    })
+    .addScene('vader:老师您好，', 300, '在座的同学们你们好！', 1500)
+    .addScene('jeason:因为一些原因，', 200, '我黑了这台电脑', 200, -2, '主机', 1500)
+    .addScene('vader:不好意思耽误大家几分钟的时间', 1500)
+    .addScene('jeason:今天是我女朋友贾凡茗的生日，她现在', 500, '就坐在讲台下', 1000)
+    // .addScene(theater.replay.bind(theater))
