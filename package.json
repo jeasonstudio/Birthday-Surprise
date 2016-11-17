@@ -1,5 +1,9 @@
 {
   "name": "TheaterJS",
+  "scripts": {
+    "watch": "gulp watch",
+    "start": "gulp default"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
