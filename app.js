@@ -12,6 +12,7 @@ function fullScreen() {
     }
 }
 
+
 var theater = theaterJS()
 
 theater
