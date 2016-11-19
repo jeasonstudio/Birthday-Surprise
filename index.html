@@ -24,7 +24,7 @@
 		<source src="mp3/xiaoxingyun.mp3" type="audio/mp3" />
 	</audio>-->
 	<div class="heart">
-		<canvas id="canvas" width="1100" height="680"></canvas>
+		<canvas id="canvas" width="" height="680"></canvas>
 	</div>
 	<main class="scene">
 		<div class="actor">
@@ -49,8 +49,10 @@
     (function(){
         var canvas = $('#canvas');
 
-        var width = canvas.width();
-        var height = canvas.height();   
+        // var width = canvas.width();
+        var height = canvas.height(); 
+		var width = $(window).width();
+        // var height = $(window).height();   
         canvas.attr("width", width);
         canvas.attr("height", height);
         var opts = {

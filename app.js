@@ -14,6 +14,7 @@ $(window).resize(function() {
     var newHeight = $win.height();
     if (newWidth != clientWidth && newHeight != clientHeight) {
         location.replace(location);
+        // $("canvans").height = newHeight;
     }
 });
 
