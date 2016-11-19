@@ -1,3 +1,22 @@
+/**
+ * GitHub: https://github.com/jeasonstudio/Birthday-Surprise/
+ * Author: Jeason
+ * Creat Time: 2016/11/19
+ * app/js
+ */
+
+var $win = $(window);
+var clientWidth = $win.width();
+var clientHeight = $win.height();
+
+$(window).resize(function() {
+    var newWidth = $win.width();
+    var newHeight = $win.height();
+    if (newWidth != clientWidth && newHeight != clientHeight) {
+        location.replace(location);
+    }
+});
+
 function fullScreen() {
     var el = document.documentElement;
     var rfs = el.requestFullScreen || el.webkitRequestFullScreen ||
