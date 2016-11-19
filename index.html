@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="src/jscex-builderbase.min.js"></script>
 	<script type="text/javascript" src="src/jscex-async.min.js"></script>
 	<script type="text/javascript" src="src/jscex-async-powerpack.min.js"></script>
-	<script type="text/javascript" src="src/functions.js" charset="utf-8"></script>
+	<!--<script type="text/javascript" src="src/functions.js" charset="utf-8"></script>-->
 	<script type="text/javascript" src="src/love.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="src/flipclock.css">
 	<link rel="stylesheet" href="src/styles.css">
@@ -95,15 +95,15 @@
         var hold = 1;
 
         canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
-            }
+			var offset = canvas.offset(), x, y;
+			x = e.pageX - offset.left;
+			y = e.pageY - offset.top;
+			if (seed.hover(x, y)) {
+				hold = 0; 
+				canvas.unbind("click");
+				canvas.unbind("mousemove");
+				canvas.removeClass('hand');
+			}
         }).mousemove(function(e){
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
@@ -150,7 +150,6 @@
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
 
-            // canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#222");
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
@@ -165,22 +164,6 @@
                 $await(Jscex.Async.sleep(25));
             }
         }));
-
-        // var textAnimate = eval(Jscex.compile("async", function () {
-		//     var together = new Date();
-		//     together.setFullYear(2010,1 , 15); 			//时间年月日
-		//     together.setHours(16);						//小时	
-		//     together.setMinutes(53);					//分钟
-		//     together.setSeconds(0);					//秒前一位
-		//     together.setMilliseconds(2);				//秒第二位
-
-		//     $("#code").show().typewriter();
-        //     $("#clock-box").fadeIn(500);
-        //     while (true) {
-        //         timeElapse(together);
-        //         $await(Jscex.Async.sleep(1000));
-        //     }
-        // }));
 
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
